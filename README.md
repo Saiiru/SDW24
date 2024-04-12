@@ -12,11 +12,10 @@ Para isso, utilizamos algumas das mais recentes Inteligências Artificiais (IAs)
 
 Caso queira reproduzir este projeto, você terá os seguintes pré-requisitos:
 
-Vontade de Aprender 😉
-Instalação da JDK 21 (versão LTS do Java na data das lives);
-Instalação do IntelliJ IDEA Community Edition ou a IDE de sua preferência (Eclipse, VSCode etc);
-[Opcional] Conta na AWS (caso queira publicar a sua API REST na Nuvem usando o AWS Elastic Beanstalk;
-[Opcional] Conta na OpenAI e/ou Google para integração com os modelos GPT e/ou Gemini respectivamente.
+- Instalação da JDK 21 (versão LTS do Java na data das lives);
+- Instalação do IntelliJ IDEA Community Edition ou a IDE de sua preferência (Eclipse, VSCode etc);
+- [Opcional] Conta na AWS (caso queira publicar a sua API REST na Nuvem usando o AWS Elastic Beanstalk;
+- [Opcional] Conta na OpenAI e/ou Google para integração com os modelos GPT e/ou Gemini respectivamente.
 
 
 # Estrutura de Diretórios:
