@@ -19,7 +19,7 @@ Instalação do IntelliJ IDEA Community Edition ou a IDE de sua preferência (Ec
 [Opcional] Conta na OpenAI e/ou Google para integração com os modelos GPT e/ou Gemini respectivamente.
 
 
-Estrutura de Diretórios:
+# Estrutura de Diretórios:
 
 Refletindo a organização apresentada no diagrama arquitetural, a estrutura de diretórios do projeto sugere uma Clean Architecture simplificada, visando a uma clara separação das responsabilidades e promovendo a autonomia das camadas em um projeto Spring Boot. Esta abordagem estrutural não só facilita a manutenção e a evolução do código, mas também sustenta a integração e a colaboração eficaz entre as diferentes partes da aplicação. A seguir, detalhamos a disposição dos diretórios que compõem a aplicação, cada um desempenhando um papel específico dentro do ecossistema de software:
 
