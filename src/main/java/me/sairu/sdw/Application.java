@@ -1,5 +1,6 @@
 package me.sairu.sdw;
 
+import me.sairu.sdw.application.AskChampionUseCase;
 import me.sairu.sdw.application.ListChampionsUseCase;
 import me.sairu.sdw.domain.ports.ChampionsRepository;
 import org.springframework.boot.SpringApplication;
@@ -18,4 +19,8 @@ public class Application {
 		return new ListChampionsUseCase(repository);
 	}
 
+	@Bean
+	public AskChampionUseCase provideAskCampionsUseCase(ChampionsRepository repository) {
+		return new AskChampionUseCase(repository);
+	}
 }
