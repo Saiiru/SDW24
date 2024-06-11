@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+generative-ai:
+  provider: ${GENERATIVE_AI_PROVIDER:GEMINI}
+
+openai:
+  base-url: https://generativelanguage.googleapis.com
+  api-key: ${OPENAI_API_KEY}
+
+gemini:
+  base-url: https://generativelanguage.googleapis.com
+  api-key: ${GEMINI_API_KEY}

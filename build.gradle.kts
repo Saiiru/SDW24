@@ -1,5 +1,6 @@
 plugins {
 	java
+	application
 	id("org.springframework.boot") version "3.2.4"
 	id("io.spring.dependency-management") version "1.1.4"
 }
@@ -15,6 +16,10 @@ repositories {
 	mavenCentral()
 }
 
+application {
+	mainClass = "me.sairu.sdw.Application"
+}
+
 extra["springCloudVersion"] = "2023.0.1"
 
 dependencies {
@@ -22,6 +27,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.4")
+	runtimeOnly("org.postgresql:postgresql")
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
@@ -32,7 +38,15 @@ dependencyManagement {
 	}
 }
 
+tasks.jar {
+	manifest {
+		attributes["Main-Class"] = "me.sairu.sdw.Application"
+	}
+}
+
 tasks.withType<Test> {
 	useJUnitPlatform()
 
 }
+
+

@@ -9,6 +9,8 @@ spring:
   h2:
     console:
       enabled: true
+  jpa:
+    show-sql: true
 
 generative-ai:
   provider: ${GENERATIVE_AI_PROVIDER:GEMINI}
