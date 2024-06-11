@@ -30,7 +30,7 @@ public interface GoogleGeminiService extends GenerativeAiService {
         );
         try {
             GoogleGeminiResp resp = textOnlyInput(req);
-            return resp.candidates().getFirst().content().parts().getFirst().text();
+            return resp.candidates().get(0).content().parts().get(0).text();
         } catch (FeignException httpErrors) {
             return "Deu ruim! Erro de comunicação com a API do Google Gemini.";
         } catch (Exception unexpectedError) {

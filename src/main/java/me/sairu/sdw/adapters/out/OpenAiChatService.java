@@ -29,7 +29,7 @@ public interface OpenAiChatService extends GenerativeAiService {
         OpenAiChatCompletionReq req = new OpenAiChatCompletionReq(model, messages);
         try {
             OpenAiChatCompletionResp resp = chatCompletion(req);
-            return resp.choices().getFirst().message().content();
+            return resp.choices().get(0).message().content();
         } catch (FeignException httpErrors) {
             return "Deu ruim! Erro de comunicação com a API da OpenAI.";
         } catch (Exception unexpectedError) {
