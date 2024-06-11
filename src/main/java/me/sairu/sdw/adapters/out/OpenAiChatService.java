@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @ConditionalOnProperty(name = "generative-ai.provider", havingValue = "OPENAI")
-@FeignClient(name = "openai", url = "${openai.base-url}", configuration = OpenAiChatService.class)
+@FeignClient(name = "openAiApi", url = "${openai.base-url}", configuration = OpenAiChatService.Config.class)
 public interface OpenAiChatService extends GenerativeAiService {
 
     @PostMapping("/v1/chat/completions")
