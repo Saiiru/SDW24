@@ -17,7 +17,7 @@ generative-ai:
   provider: ${GENERATIVE_AI_PROVIDER:GEMINI}
 
 openai:
-  base-url: https://generativelanguage.googleapis.com
+  base-url: https://api.openai.com/v1/models
   api-key: ${OPENAI_API_KEY}
 
 gemini:
