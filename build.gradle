@@ -1,0 +1,51 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.0'
+	id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'me.sairu'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "2023.0.2")
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.4"
+	runtimeOnly "org.postgresql:postgresql"
+	runtimeOnly "com.h2database:h2"
+	testImplementation "org.springframework.boot:spring-boot-starter-test"
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+
+tasks.jar {
+	manifest {
+		attributes["Main-Class"] = "me.sairu.sdw.Application"
+	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
